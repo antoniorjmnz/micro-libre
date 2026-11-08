@@ -1,0 +1,33 @@
+{
+  "name": "micro-libre",
+  "version": "0.1.0",
+  "description": "Usa el móvil como micrófono del PC por WiFi. Sin app, sin anuncios, sin cuentas.",
+  "license": "MIT",
+  "bin": {
+    "micro-libre": "src/server.js"
+  },
+  "main": "src/server.js",
+  "files": [
+    "src",
+    "public"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "build": "node scripts/build-exe.js"
+  },
+  "keywords": [
+    "microphone",
+    "webrtc",
+    "virtual-microphone",
+    "wo-mic-alternative",
+    "vb-cable",
+    "windows"
+  ],
+  "devDependencies": {
+    "postject": "^1.0.0-alpha.6"
+  }
+}

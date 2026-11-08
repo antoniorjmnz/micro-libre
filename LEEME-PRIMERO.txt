@@ -1,0 +1,24 @@
+micro-libre - el movil como microfono del PC (sin anuncios)
+============================================================
+
+Necesitas (una sola vez):
+  VB-Cable (gratis):  https://vb-audio.com/Cable/
+  Descomprime su zip, clic derecho en VBCABLE_Setup_x64.exe -> "Ejecutar como administrador"
+  -> Install Driver. Reinicia el PC si lo pide.
+
+Cada vez que lo uses:
+  1. Doble clic en  micro-libre.exe
+     - Si sale "Windows protegio su PC": Mas informacion -> Ejecutar de todas formas.
+     - Si Windows pregunta por el firewall: marca "Redes privadas" y Permitir.
+  2. Se abre una ventanita con un codigo QR. Escanealo con la camara del movil
+     (el movil tiene que estar en la MISMA WiFi que el PC).
+  3. El movil dira "conexion no privada": es normal (el certificado lo crea tu PC).
+     Android: Configuracion avanzada -> Acceder.   iPhone: Mostrar detalles -> visitar este sitio web.
+  4. Pulsa "Empezar" y permite el microfono.
+  5. En Discord / OBS / Zoom / Teams elige como microfono:  CABLE Output (VB-Audio Virtual Cable)
+
+Deja la pantalla del movil encendida mientras hablas.
+Para cerrar: cierra la ventana negra (consola).
+
+Necesita Edge o Chrome en el PC (Edge ya viene con Windows).
+Codigo fuente y licencia (MIT): proyecto micro-libre.

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>micro-libre · receptor</title>
+  <link rel="icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>micro-libre <span id="version"></span></h1>
+  </header>
+
+  <section class="card">
+    <div class="status"><span class="dot" id="dot"></span><span id="status">Esperando al móvil…</span></div>
+    <div class="sub" id="statusSub">Escanea el QR con la cámara del móvil. Tiene que estar en la misma WiFi.</div>
+    <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+  </section>
+
+  <section class="card" id="qrCard">
+    <h2>Conectar el móvil</h2>
+    <div class="qr" id="qr"></div>
+    <div class="url" id="phoneUrl"></div>
+  </section>
+
+  <section class="card">
+    <h2>Salida (el micrófono virtual)</h2>
+    <div class="warn hidden" id="noCable">
+      No veo VB-Cable. Instálalo gratis desde <a href="https://vb-audio.com/Cable/" target="_blank" rel="noopener">vb-audio.com/Cable</a>
+      y reinicia micro-libre. Después, en Discord, OBS o Zoom elige <b>CABLE Output</b> como micrófono.
+    </div>
+    <div class="warn hidden" id="noLabels">
+      El navegador oculta los nombres de los dispositivos.
+      <button class="secondary" id="unlock" type="button">Mostrar nombres</button>
+    </div>
+    <select id="device" aria-label="Dispositivo de salida"></select>
+    <label class="row"><span>Escucharme también por los altavoces</span><input type="checkbox" id="monitor"></label>
+  </section>
+
+  <footer>Open source · sin anuncios · el audio no sale de tu red</footer>
+</main>
+
+<audio id="out" autoplay></audio>
+<audio id="mon" autoplay muted></audio>
+<script src="qr.js"></script>
+<script src="receiver.js"></script>
+</body>
+</html>

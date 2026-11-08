@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f7a5a">
+  <title>micro-libre</title>
+  <link rel="icon" href="icon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header><h1>micro-libre</h1></header>
+
+  <div class="warn hidden" id="insecure">
+    El navegador no permite usar el micrófono aquí. Abre la página con <b>https://</b> desde el QR del PC
+    y acepta el aviso del certificado (es tu propio PC).
+  </div>
+  <div class="warn hidden" id="noToken">
+    Falta el código de emparejamiento. Vuelve a escanear el QR que aparece en el PC.
+  </div>
+
+  <button class="big" id="toggle" type="button">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+    <span id="toggleText">Empezar</span>
+  </button>
+
+  <section class="card">
+    <div class="status"><span class="dot" id="dot"></span><span id="status">Listo</span></div>
+    <div class="sub" id="statusSub">Pulsa Empezar y permite el micrófono.</div>
+    <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+  </section>
+
+  <section class="card">
+    <h2>Sonido</h2>
+    <label class="row"><span>Supresión de ruido</span><input type="checkbox" id="ns" checked></label>
+    <label class="row"><span>Ganancia automática</span><input type="checkbox" id="agc" checked></label>
+    <label class="row"><span>Cancelación de eco<br><small>Actívala si el PC suena por altavoces cerca del móvil</small></span><input type="checkbox" id="ec"></label>
+    <label class="row"><span>Silenciar</span><input type="checkbox" id="mute"></label>
+  </section>
+
+  <details class="card">
+    <summary>¿Aviso de «conexión no privada»?</summary>
+    <ol>
+      <li>Es normal: el certificado lo crea tu PC y no lo firma ninguna empresa.</li>
+      <li>Android (Chrome): <b>Configuración avanzada</b> → <b>Acceder a … (no seguro)</b>.</li>
+      <li>iPhone (Safari): <b>Mostrar detalles</b> → <b>visitar este sitio web</b>.</li>
+      <li>Mantén la pantalla encendida mientras lo uses: si se bloquea, el móvil corta el micro.</li>
+    </ol>
+  </details>
+
+  <footer>Open source · sin anuncios · el audio va directo a tu PC</footer>
+</main>
+<script src="phone.js"></script>
+</body>
+</html>

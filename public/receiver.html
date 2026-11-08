@@ -31,6 +31,11 @@
       No veo VB-Cable. Instálalo gratis desde <a href="https://vb-audio.com/Cable/" target="_blank" rel="noopener">vb-audio.com/Cable</a>
       y reinicia micro-libre. Después, en Discord, OBS o Zoom elige <b>CABLE Output</b> como micrófono.
     </div>
+    <div class="warn hidden" id="cableDefault">
+      Windows está usando <b>CABLE Input</b> como salida de sonido, por eso no oyes tu PC.
+      Clic derecho en el altavoz de la barra de tareas → <b>Configuración de sonido</b> → en <b>Salida</b> elige tus cascos
+      o altavoces. micro-libre seguirá enviando tu voz al cable igualmente. No desactives CABLE Input: solo deja de ser el predeterminado.
+    </div>
     <div class="warn hidden" id="noLabels">
       El navegador oculta los nombres de los dispositivos.
       <button class="secondary" id="unlock" type="button">Mostrar nombres</button>
@@ -45,6 +50,7 @@
 <audio id="out" autoplay></audio>
 <audio id="mon" autoplay muted></audio>
 <script src="qr.js"></script>
+<script src="devices.js"></script>
 <script src="receiver.js"></script>
 </body>
 </html>

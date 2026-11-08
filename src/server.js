@@ -16,7 +16,7 @@ const crypto = require('crypto');
 const { spawn } = require('child_process');
 const { generateCert } = require('./cert');
 
-const VERSION = '0.1.0';
+const VERSION = '0.1.1';
 const PUBLIC_DIR = path.join(__dirname, '..', 'public');
 
 // Cuando va empaquetado como micro-libre.exe, las páginas viajan dentro del ejecutable.

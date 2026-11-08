@@ -54,19 +54,21 @@ async function fillDevices() {
   const hasLabels = outputs.some((d) => d.label);
   $('noLabels').classList.toggle('hidden', hasLabels);
 
-  const saved = store.get('sinkId');
-  const cable = outputs.find((d) => /CABLE Input/i.test(d.label)) || outputs.find((d) => /VB-Audio|CABLE/i.test(d.label));
+  const cable = Devices.findCable(outputs);
   $('noCable').classList.toggle('hidden', !hasLabels || !!cable);
+  $('cableDefault').classList.toggle('hidden', !Devices.cableIsSystemDefault(outputs));
 
   deviceSel.innerHTML = '';
   outputs.forEach((d, i) => {
     const o = document.createElement('option');
     o.value = d.deviceId;
-    o.textContent = d.label || (d.deviceId === 'default' ? 'Predeterminado del sistema' : `Salida ${i + 1}`);
+    o.textContent = Devices.isAlias(d)
+      ? `Lo que Windows tenga como predeterminado${d.label ? ` (ahora: ${d.label.replace(/^[^-]*-\s*/, '')})` : ''}`
+      : d.label || `Salida ${i + 1}`;
     deviceSel.appendChild(o);
   });
-  const pick = outputs.find((d) => d.deviceId === saved) || cable || outputs[0];
-  if (pick) deviceSel.value = pick.deviceId;
+  const pick = Devices.pickOutput(outputs, store.get('sinkId'));
+  if (pick) deviceSel.value = pick;
   await applySink();
 }
 

@@ -6,6 +6,16 @@ Necesitas (una sola vez):
   Descomprime su zip, clic derecho en VBCABLE_Setup_x64.exe -> "Ejecutar como administrador"
   -> Install Driver. Reinicia el PC si lo pide.
 
+  IMPORTANTE: al instalarlo, Windows suele poner "CABLE Input" como salida de sonido y dejas
+  de oir el PC. Arreglo: clic derecho en el altavoz de la barra de tareas -> Configuracion de sonido
+  -> Salida: elige tus cascos o altavoces. NO desactives CABLE Input, solo que no sea el predeterminado.
+
+  Resumen de que va donde:
+    Windows, Salida ..................... tus cascos / altavoces
+    Discord/OBS/Zoom, Microfono ......... CABLE Output
+    Discord/OBS/Zoom, Salida ............ tus cascos / altavoces
+    Ventana de micro-libre, Salida ...... CABLE Input (se elige sola)
+
 Cada vez que lo uses:
   1. Doble clic en  micro-libre.exe
      - Si sale "Windows protegio su PC": Mas informacion -> Ejecutar de todas formas.

@@ -68,6 +68,7 @@ Mantén la pantalla del móvil encendida mientras lo uses: si se bloquea, el sis
 |---|---|
 | El móvil no carga la página | Misma WiFi; firewall de Windows permitido para Node en redes privadas; prueba `--ip` con otra IP de las que muestra la consola. Las redes «públicas» de Windows bloquean conexiones entrantes. |
 | «No veo VB-Cable» | Instálalo y reinicia micro-libre. |
+| No oigo el PC tras instalar VB-Cable | Windows puso *CABLE Input* como salida predeterminada. En Configuración de sonido → Salida elige tus cascos. No desactives CABLE Input. micro-libre sigue enviando al cable igualmente. |
 | Se corta al bloquear el móvil | Es una limitación de los navegadores móviles: deja la pantalla encendida. |
 | Se oye eco | Activa *Cancelación de eco* en el móvil, o usa auriculares en el PC. |
 | La WiFi de invitados/hotel no conecta | Muchas aíslan a los dispositivos entre sí; no hay arreglo desde aquí. |
